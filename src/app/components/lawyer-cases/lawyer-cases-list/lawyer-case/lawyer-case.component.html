@@ -1,0 +1,73 @@
+<div class="card" *ngIf="!rated">
+  <div class="card-header">
+    <b>{{ case.clientName }}</b>
+  </div>
+  <div class="card-body">
+    <b class="card-title">{{ case.type }}</b>
+    <p class="card-text">
+      {{ case.description }}
+    </p>
+
+    <div *ngIf="case.status == 'en cours' && case.date">
+      <b class="card-title">Votre prochain rendez-vous</b>
+      <p class="card-text">
+        {{ case.date | date }}
+      </p>
+    </div>
+    <div class="rating" *ngIf="case.status == 'terminée' && !isLawyer">
+      <!-- <span *ngFor="let i of [5,4,3,2,1]">
+        <input type="radio" name="rating" id="rating-{{i}}" (click)="rate(i)" />
+        <label for="rating-{{i}}"></label>
+      </span> -->
+
+      <input type="radio" name="rating" id="rating-5" (click)="rate(5)" />
+      <label for="rating-5"></label>
+      <input type="radio" name="rating" id="rating-4" (click)="rate(4)" />
+      <label for="rating-4"></label>
+      <input type="radio" name="rating" id="rating-3" (click)="rate(3)" />
+      <label for="rating-3"></label>
+      <input type="radio" name="rating" id="rating-2" (click)="rate(2)" />
+      <label for="rating-2"></label>
+      <input type="radio" name="rating" id="rating-1" (click)="rate(1)" />
+      <label for="rating-1"></label>
+    </div>
+
+    <br />
+
+    <div *ngIf="case.status == 'en cours' && case.todos.length">
+      <b class="card-title">A faire</b>
+      <div *ngFor="let i of case.todos">
+        <p>- {{ i }}</p>
+      </div>
+      <br />
+    </div>
+    <button
+      [ngStyle]="{ 'border-radius': '15px' }"
+      *ngIf="case.status == 'en cours' && isLawyer"
+      type="button"
+      class="btn btn-outline-warning"
+      (click)="openModal()"
+    >
+      Modifier
+    </button>
+
+    <div *ngIf="case.status == 'demande'">
+      <button
+        [ngStyle]="{ 'border-radius': '15px' }"
+        type="button"
+        class="btn btn-outline-success"
+        (click)="caseAccepted()"
+      >
+        Accepter
+      </button>
+      <button
+        [ngStyle]="{ 'border-radius': '15px' }"
+        type="button"
+        class="btn btn-outline-danger"
+        (click)="caseDeleted()"
+      >
+        Refuser
+      </button>
+    </div>
+  </div>
+</div>

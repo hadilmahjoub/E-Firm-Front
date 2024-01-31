@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header">
+    <b>{{ case.clientName }}</b>
+  </div>
+  <div class="card-body">
+    <b class="card-title">{{ case.type }}</b>
+    <p class="card-text">
+      {{ case.description }}
+    </p>
+
+    <div *ngIf="case.status == 'en cours' && case.date">
+      <b class="card-title">Votre prochain rendez-vous</b>
+      <p class="card-text">
+        {{ case.date | date }}
+      </p>
+    </div>
+
+    <br />
+
+    <div *ngIf="case.status == 'en cours' && case.todos.length">
+      <b class="card-title">A faire</b>
+      <div *ngFor="let i of case.todos">
+        <p>- {{ i }}</p>
+      </div>
+      <br />
+    </div>
+    <button
+      [ngStyle]="{ 'border-radius': '15px' }"
+      
+      type="button"
+      class="btn btn-outline-warning"
+      (click)="openModal()"
+    >
+      Modifier
+    </button>
+  </div>
+</div>

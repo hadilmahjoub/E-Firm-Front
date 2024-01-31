@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Affaires terminées</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modalRef.close()"
+  ></button>
+</div>
+<br />
+<div class="modal-body">
+  <div>Vous avez un affaire terminé avec cet avocat vous pouvez le noter</div>
+  <br />
+  <div *ngFor="let case of cases" class="mb-3">
+    <app-lawyer-case [case]="case" [isLawyer]="false"> </app-lawyer-case>
+  </div>
+</div>
+<div class="modal-footer d-flex justify-content-center">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+    Close
+  </button>
+</div>

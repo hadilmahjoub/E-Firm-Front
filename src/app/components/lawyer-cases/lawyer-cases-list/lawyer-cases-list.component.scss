@@ -1,0 +1,16 @@
+h3 {
+  text-align: center;
+}
+
+::ng-deep {
+  .ngx-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+  ul > li.current {
+    background-color: #5d0c0c !important;
+    color: white;
+  }
+}

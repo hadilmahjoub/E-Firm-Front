@@ -1,0 +1,83 @@
+<!-- Home First Screen -->
+<app-home-screen></app-home-screen>
+
+<!--Espace who we are-->
+<app-home-section
+  [imgCols]="4"
+  [imgSource]="'assets/img/logo.png'"
+  [title]="'Qui sommes-nous ?'"
+  [text]="
+    'e-firm.tn est un site web qui met a la disposition du citoyen un espace qui l\'accompagnera juridiquement jusqu\'à la résolution de ses problèmes. Le demandeur, selon son problème, sera soit, dirigé vers une spécialiste de droit en cas de besoin, soit informé par les procédures à suivre. Le défendeur, quant à lui, aura l\'opportunité de présenter ses services.'
+  "
+  [hasBtn]="false"
+></app-home-section>
+
+<div class="parallax">
+  <!--Features-->
+  <div class="container">
+    <div
+      class="row py-5 px-2"
+      data-aos="fade-up"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="1000"
+    >
+      <div class="col-md-3 col-sm-6 py-3">
+        <app-feature-card
+          [imageSource]="'assets/img/confidentiel.png'"
+          [title]="'Confidentiel'"
+        ></app-feature-card>
+      </div>
+      <div class="col-md-3 col-sm-6 py-3">
+        <app-feature-card
+          [imageSource]="'assets/img/justice.png'"
+          [title]="'Juste'"
+        ></app-feature-card>
+      </div>
+      <div class="col-md-3 col-sm-6 py-3">
+        <app-feature-card
+          [imageSource]="'assets/img/pratique.png'"
+          [title]="'Pratique'"
+        ></app-feature-card>
+      </div>
+      <div class="col-md-3 col-sm-6 py-3">
+        <app-feature-card
+          [imageSource]="'assets/img/fiable.png'"
+          [title]="'Fiable'"
+        ></app-feature-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Espace avocat-->
+<app-home-section
+  [flexReverse]="true"
+  [imgCols]="4"
+  [imgSource]="'assets/img/lawyers.jpg'"
+  [title]="'Vous êtes un avocat'"
+  [text]="
+    'vous cherchez à avoir plus de clients ? e-firm.tn est le meilleur espace pour offrir vos services et augmenter votre reconnaissance. C\'est simple et fiable.'
+  "
+  [hasBtn]="true"
+  [btn]="'Espace Avocat'"
+  [btnLink]="routes.lawyerCases"
+></app-home-section>
+
+<!-- -->
+<div class="parallax" style="height: 30vh"></div>
+
+<!--Espace victime-->
+<app-home-section
+  [imgCols]="5"
+  [imgSource]="'assets/img/18.jpg'"
+  [title]="'Vous avez un problème'"
+  [text]="
+    'Vous avez fait un conflit avec ton patron, tes voisins ou bien vous voulez divorcer, distribuer une hérité etc . e-firm.tn est la solution la plus facile et efficace pour vous.'
+  "
+  [hasBtn]="true"
+  [btn]="'Espace Victime'"
+  [btnLink]="routes.problem"
+></app-home-section>
+
+<!-- -->
+<div class="parallax" style="height: 30vh"></div>

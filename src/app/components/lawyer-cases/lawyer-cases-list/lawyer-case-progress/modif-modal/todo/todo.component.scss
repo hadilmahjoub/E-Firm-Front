@@ -1,0 +1,27 @@
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.btn.btn-light.success {
+  border-radius: 100px;
+  height: 40px;
+  padding: 12px;
+  margin-left: 13px;
+  color: #1c6822;
+}
+
+.btn.btn-light.danger {
+  border-radius: 100px;
+  height: 40px;
+  padding: 12px;
+  margin-left: 13px;
+  color: #a12828;
+}

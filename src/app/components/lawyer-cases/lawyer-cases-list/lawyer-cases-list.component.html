@@ -1,0 +1,70 @@
+<div class="container">
+  <div *ngIf="etat === 'demande'">
+    <div
+      *ngFor="
+        let case of casesDemand
+          | paginate : { itemsPerPage: itemsPerPage, currentPage: pd }
+      "
+    >
+      <app-lawyer-case-demand
+        *ngIf="
+          searchText === '' ||
+          case.clientName.toLowerCase().includes(searchText.toLowerCase())
+        "
+        [case]="case"
+        [isLawyer]="true"
+      >
+      </app-lawyer-case-demand>
+      <br />
+    </div>
+    <div class="mt-8 py-5 flex justify-center items-center">
+      <pagination-controls (pageChange)="pd = $event"></pagination-controls>
+    </div>
+  </div>
+
+  <div *ngIf="etat === 'en cours'">
+    <div
+      *ngFor="
+        let case of casesProgress
+          | paginate : { itemsPerPage: itemsPerPage, currentPage: pc }
+      "
+    >
+      <app-lawyer-case-progress
+        *ngIf="
+          searchText === '' ||
+          case.clientName.toLowerCase().includes(searchText.toLowerCase())
+        "
+        [case]="case"
+        [isLawyer]="true"
+      >
+      </app-lawyer-case-progress>
+      <br />
+    </div>
+    <div class="mt-8 py-5 flex justify-center items-center">
+      <pagination-controls (pageChange)="pc = $event"></pagination-controls>
+    </div>
+  </div>
+
+  <div *ngIf="etat === 'terminée'">
+    <div
+      *ngFor="
+        let case of casesFinish
+          | paginate : { itemsPerPage: itemsPerPage, currentPage: pt }
+      "
+    >
+      <app-lawyer-case-finish
+        *ngIf="
+          searchText === '' ||
+          case.clientName.toLowerCase().includes(searchText.toLowerCase())
+        "
+        [case]="case"
+        [isLawyer]="true"
+      >
+      </app-lawyer-case-finish>
+      <br />
+    </div>
+    <div class="mt-8 py-5 flex justify-center items-center">
+      <pagination-controls (pageChange)="pt = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

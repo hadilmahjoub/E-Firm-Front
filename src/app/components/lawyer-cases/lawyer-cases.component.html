@@ -1,0 +1,33 @@
+<div class="page">
+    <div class="image-header">Affaires</div>
+    <br/>
+    <div >
+        <div class="groupbutton" >
+            <button mdbBtn
+                class="bdr"
+                type="button" 
+                [ngStyle]="{'background-color':colordemand}"
+                (click)="onShowDemand()"
+                mdbWavesEffect>Demande
+            </button>
+            <button mdbBtn
+                class="bdr"
+                type="button" 
+                [ngStyle]="{'background-color':colorencours}"
+                (click)="onShowEncours()"
+                mdbWavesEffect>En cours
+            </button>
+            <button mdbBtn
+                class="bdr"
+                type="button" 
+                [ngStyle]="{'background-color':colorterm}"
+                (click)="onShowTermine()"
+                mdbWavesEffect>Terminée
+            </button>
+        </div>
+
+        <app-search></app-search>
+
+        <app-lawyer-cases-list></app-lawyer-cases-list>
+    </div>
+</div>

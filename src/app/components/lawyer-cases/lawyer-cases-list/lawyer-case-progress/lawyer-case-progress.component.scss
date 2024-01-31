@@ -1,0 +1,17 @@
+.card {
+  margin: 0 50px;
+  border-radius: 15px;
+}
+
+.card-header {
+  background-color: #fcead7;
+  color: #5d0c0c;
+  border-radius: 15px 15px 0 0;
+}
+
+.btn-outline-warning {
+  border: 2px solid #5d0c0c !important;
+  background-color: transparent !important;
+  color: #5d0c0c !important;
+  font-weight: bold;
+}

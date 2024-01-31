@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="modal-header">
+    <h4 class="modal-title" id="exampleModalLabel">{{ clientName }}</h4>
+  </div>
+  <div class="modal-body">
+    <b [ngStyle]="{ 'font-size': '30px' }">{{ type }}</b>
+    <p [ngStyle]="{ 'font-size': '20px' }">{{ description }}</p>
+
+    <hr />
+
+    <b [ngStyle]="{ 'font-size': '20px' }">Etat de l'affaire</b>
+
+    <!-- EN COURS -->
+    <div class="row mt-1">
+      <div class="col-md-6">
+        <div class="form-check">
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="encours"
+            id="encours"
+            [checked]="status == 'en cours'"
+            (click)="status = 'en cours'"
+          />
+          <label class="form-check-label" for="encours"> En cours </label>
+        </div>
+      </div>
+
+      <!-- TERMINEE -->
+      <div class="col-md-6">
+        <div class="form-check">
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="termine"
+            id="termine"
+            [checked]="status == 'terminée'"
+            (click)="status = 'terminée'"
+          />
+          <label class="form-check-label" for="termine"> Terminée </label>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <!-- DATE DU RENDEZ VOUS -->
+    <div *ngIf="status == 'en cours'">
+      <b [ngStyle]="{ 'font-size': '20px' }">Date du rendez-vous</b>
+
+      <input
+        [(ngModel)]="date"
+        type="date"
+        value="{{ date }}"
+        class="col-10 form-control"
+        style="width: 600px"
+      />
+      <br />
+    </div>
+
+    <!-- TODOS -->
+    <div *ngIf="status == 'en cours'">
+      <b [ngStyle]="{ 'font-size': '20px' }">A faire</b>
+      <app-todo [items]="todos"></app-todo>
+    </div>
+  </div>
+
+  <!-- SAVE -->
+  <div class="modal-footer">
+    <button
+      [ngStyle]="{ 'border-radius': '15px' }"
+      type="button"
+      class="btn btn-outline-success"
+      (click)="close()"
+    >
+      Sauvegarder
+    </button>
+  </div>
+</div>

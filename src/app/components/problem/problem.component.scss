@@ -1,0 +1,42 @@
+.form-control {
+  width: 100%;
+}
+
+button {
+  border-radius: 20px;
+  background-color: #fcead7;
+  border: 1px solid #5d0c0c;
+}
+
+button:hover {
+  border-radius: 20px;
+  background-color: #5d0c0c;
+  color: #fcead7;
+  border: 1px solid #5d0c0c;
+}
+
+button:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.form-side,
+.img-side {
+  height: 500px;
+}
+
+.img-side .card-body {
+  background-image: url("../../../assets/img/image1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  /* Small screens (sm) */
+  .img-side {
+    height: 150px;
+  }
+}

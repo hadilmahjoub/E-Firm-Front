@@ -1,0 +1,39 @@
+.parallax {
+  /* The image used */
+  background-image: url("../../../assets/img/z(1).jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dropdown{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  .dropdown {
+    display: block;
+  }
+  
+  .nav-active {
+    transform: translateX(0%);
+  }
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+}

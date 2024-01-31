@@ -1,0 +1,79 @@
+<div class="container">
+  <br />
+
+  <div class="d-flex flex-lg-row flex-sm-column-reverse">
+    <div class="col-lg-6">
+      <div class="card form-side">
+        <div class="card-body">
+          <h3>Posez votre problème</h3>
+          <br />
+          <div>
+            <form [formGroup]="problemDescriptionForm">
+              <div class="form-group">
+                <label for="age">Type de problème</label>
+                <select
+                  class="form-control"
+                  name="type"
+                  formControlName="type"
+                  [(ngModel)]="problem.type"
+                >
+                  <option value="" disabled selected>Litige</option>
+                  <option>Administratif</option>
+                  <option>Financier</option>
+                  <option>Foncier</option>
+                  <option>Commercial</option>
+                  <option>Fiscale</option>
+                  <option>Contractuel</option>
+                  <option>Civil</option>
+                  <option>Pénal</option>
+                  <option>Familier</option>
+                </select>
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="comment">Description</label>
+                <textarea
+                  class="form-control"
+                  formControlName="description"
+                  id="comment"
+                  rows="3"
+                  placeholder="Commentaire"
+                  [(ngModel)]="problem.description"
+                ></textarea>
+              </div>
+              <br />
+              <div class="d-flex justify-content-center">
+                <button
+                  type="submit"
+                  [disabled]="!problemDescriptionForm.valid"
+                  mdbBtn
+                  class="btn button"
+                  (click)="loadLawyers()"
+                >
+                  Résoudre
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-2"></div>
+    <div class="col-lg-6">
+      <div class="card img-side">
+        <div
+          class="card-body"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div *ngIf="showLawyers">
+    <app-lawyer-table
+      [description]="problem.description"
+      [problemType]="problem.type"
+    ></app-lawyer-table>
+  </div>
+</div>

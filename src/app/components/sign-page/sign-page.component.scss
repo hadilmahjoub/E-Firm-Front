@@ -1,0 +1,73 @@
+.card {
+  background-color: rgba(0, 0, 0, $alpha: 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: wheat;
+  font-weight: 500;
+  padding: 80px;
+}
+
+.image-header {
+  padding: 0 100px;
+  text-align: center;
+  font-size: 40px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  height: 90vh;
+  width: 100%;
+  background-image: url("../../../assets/img/t.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.left {
+  height: 90vh;
+  width: 100%;
+  background-image: url("../../../assets/img/ssa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  padding-top: 32px;
+  filter: brightness(50%);
+  text-align: center;
+}
+
+.centered:hover {
+  filter: brightness(100%);
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+@media (max-width: 992px) {
+  /* Small screens (sm) */
+  .card {
+    padding: 20px;
+  }
+  
+  .left, .right {
+    height: 45vh;
+  }
+
+  .image-header {
+    font-size: 30px;
+    padding: 0 50px;
+  }
+
+  .centered {
+    padding: 0;
+  }
+}

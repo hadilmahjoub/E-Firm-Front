@@ -1,0 +1,88 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" routerLink="**">
+      <img
+        src="assets/img/logo.png"
+        height="40"
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="**">Acceuil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/problem">Faire une demande</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isAuthLawyer()" routerLink="/lawyerCases">Espace avocat</a>
+        </li>
+
+
+
+
+        
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item" ngbDropdown>
+              <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
+                Procédures
+              </a>
+              <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
+                <a ngbDropdownItem routerLink="/scroll1" (click)="$event.preventDefault()">Comment saisir la justice ?</a>
+                <a ngbDropdownItem routerLink="/scroll2" (click)="$event.preventDefault()">Les alternatives au procès</a>
+                <a ngbDropdownItem routerLink="scroll3" (click)="$event.preventDefault()">Que faire en cas de convocationdevant la justice ?</a>
+                <a ngbDropdownItem routerLink="scroll4" (click)="$event.preventDefault()">Quel est le tribunal compétent ?</a>
+              </div>
+            </li>
+          </ul>
+      
+
+     
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/problem">Mes droits</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+      <div class="d-flex align-items-center">
+        <button mdbBtn type="button" class="btn btn-link px-3 me-2"  routerLink="login" *ngIf="!isAuth()" routerLink="/signin" mdbWavesEffect>
+          Se connecter
+        </button>
+
+        <button mdbBtn type="button" class="btn  me-3" color="deep-orange" *ngIf="!isAuth()" routerLink="/signup" mdbWavesEffect>
+          S'inscrire
+        </button>
+        <button type="button" class="btn me-2"  *ngIf="isAuth()" (click)="getProfile()">
+          <i class="fas fa-user"></i>
+        </button>
+        <button mdbBtn type="button" class="btn btn-primary me-3" color="deep-orange" (click)="signout()" *ngIf="isAuth()" routerLink="/" mdbWavesEffect>
+          Se déconnecter
+        </button>
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

@@ -1,0 +1,23 @@
+.photo-changer{
+    padding:5px 10px;
+    background:#ff7043;
+    border:1px solid #ff7043;
+    position:relative;
+    color:#fff;
+    border-radius:2px;
+    text-align:center;
+    
+    cursor:pointer
+  }
+  .hide_file {
+      position: absolute;
+      z-index: 1000;
+      opacity: 0;
+      cursor: pointer;
+      right: 0;
+      top: 0;
+      height: 100%;
+      font-size: 24px;
+      width: 100%;
+      
+  }

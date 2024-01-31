@@ -1,0 +1,39 @@
+<div>
+  <div class="row mt-1">
+    <div
+      class="col-12 col-md-12 d-flex justify-content-center align-items-center"
+    >
+      <input
+        [(ngModel)]="newTask"
+        type="text"
+        [value]="newTask"
+        class="col-10 form-control"
+        style="width: 600px"
+      />
+      <!-- <div class="col-1"></div> -->
+      <button (click)="addToList()" class="btn btn-light success">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <ol *ngFor="let x of items; let index = index" class="row mt-1">
+    <li class="row d-flex align-items-center">
+      <div class="col-md-10">- {{ x }}</div>
+      <div class="col-md-2">
+        <button
+          (click)="deleteTask(index)"
+          class="btn btn-light danger"
+          style="margin-left: 10px"
+          [ngStyle]="{
+            'border-radius': '100px',
+            height: '40px',
+            padding: '14px'
+          }"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </li>
+  </ol>
+</div>

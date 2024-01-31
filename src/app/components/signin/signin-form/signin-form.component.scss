@@ -1,0 +1,41 @@
+.card {
+  box-shadow: 0 3px 5px #0000006f;
+  width: 500px;
+  padding: 40px;
+  margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 5%);
+}
+
+.card h1,
+h6 {
+  color: rgb(66, 60, 60);
+}
+
+// label {
+//   color: rgb(92, 86, 86);
+// }
+
+button {
+  border-radius: 20px;
+  background-color: #fcead7;
+  border: 1px solid #5d0c0c;
+}
+
+button:hover {
+  border-radius: 20px;
+  background-color: #5d0c0c;
+  color: #fcead7;
+  border: 1px solid #5d0c0c;
+}
+
+button:disabled{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.ng-invalid.ng-touched {
+    border-color: red;
+}

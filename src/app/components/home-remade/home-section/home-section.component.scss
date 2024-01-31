@@ -1,0 +1,49 @@
+.custom-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  background-color: #fcead7;
+  border: 2px solid #5d0c0c;
+  border-radius: 20px;
+  color: #5d0c0c;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #5d0c0c;
+  color: #fcead7;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.custom-text {
+  font-size: 2rem;
+}
+
+.custom-image {
+  height: 350px;
+  width: auto;
+  border-radius: 30px;
+}
+
+.custom-image:hover {
+  transform: scale(1.075);
+}
+
+@media screen and (max-width: 768px) {
+  .custom-image {
+    height: 200px;
+  }
+}
