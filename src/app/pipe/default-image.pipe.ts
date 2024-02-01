@@ -1,17 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { APP_CONSTS } from '../config/constants.config';
 
 @Pipe({
-  name: 'defaultImage'
+  name: 'defaultImage',
 })
 export class DefaultImagePipe implements PipeTransform {
-
-  transform(value: string |undefined): string|undefined {
-    if(!value){
-      return "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
-    }
-    else{
+  transform(value: string | undefined): string | undefined {
+    if (!value) {
+      return APP_CONSTS.defaultImg;
+    } else {
       return value;
     }
   }
-
 }
